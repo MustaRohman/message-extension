@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MustaRohman/message-extension/issues"
   },
-  "homepage": "https://github.com/MustaRohman/message-extension#readme"
+  "homepage": "https://github.com/MustaRohman/message-extension#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
 }
