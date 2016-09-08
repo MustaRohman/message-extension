@@ -55,7 +55,7 @@ function createUser(userObject) {
 			if (this.readyState === 4 && this.status === 200) {
 				return resolve(JSON.parse(this.responseText))
 			} else if (this.readyState === 4) {
-				return reject(this.responseText);
+				return reject(JSON.parse(this.responseText));
 			}
 		}
 

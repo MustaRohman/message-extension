@@ -1,15 +1,16 @@
 var token;
 
 $(document).ready(function() {
+	var $emailInput = $('#emailInput');
+	$emailInput.val('musta@random.com');
+	var $passwordInput = $('#passwordInput');
+	$passwordInput.val('randomPass');
 
-	$('button[type=submit]').click(function() {
+	$('#login').click(function() {
 		console.log('Testing');
-		var $emailInput = $('#emailInput');
-		var $passwordInput = $('#passwordInput');
-		// $passwordInput.val('randomPass');
 
 		if ($emailInput.val() === "" || $passwordInput.val() === "") {
-			alert('Incorrect credentials');
+			notie.alert(3, 'Please enter email and password', 2.5);
 			return;
 		}
 
@@ -32,10 +33,23 @@ $(document).ready(function() {
 			window.location.href = "chats.html";
 
 		}, function(e) {
+			notie.alert(3, 'Login failed', 2.5);
 			console.log(e);
 		})
 
 	});
+
+	$('#create').click(function () {
+		createUser({
+			email: $emailInput.val(),
+			password: $passwordInput.val()
+		}).then(function (userDetails) {
+			console.log('Success!');
+			notie.alert(1, 'Create Success!', 2);
+		}, function (e) {
+			console.log(e.errors[0].message);
+		})
+	})
 
 
 });
