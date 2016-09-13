@@ -1,28 +1,31 @@
-var token;
-
 $(document).ready(function() {
+
 	var $emailInput = $('#emailInput');
-	$emailInput.val('musta@random.com');
 	var $passwordInput = $('#passwordInput');
-	$passwordInput.val('randomPass');
 
+	if (typeof(Storage) !== 'undefined') {
+		var email = localStorage.getItem('email');
+		$emailInput.val(email);
+	}
+
+
+	// Login Button
 	$('#login').click(function() {
-		console.log('Testing');
-
 		if ($emailInput.val() === "" || $passwordInput.val() === "") {
 			notie.alert(3, 'Please enter email and password', 2.5);
 			return;
 		}
 
-		login({
+		user(UserOperation.LOGIN, {
 			email: $emailInput.val(),
 			password: $passwordInput.val()
 		}).then(function(userDetails) {
 			console.log('Success!');
-			// console.log(userDetails);
-			// token = userDetails.token;
 			if (typeof(Storage) !== 'undefined') {
-				localStorage.setItem('Auth', userDetails.token);
+				sessionStorage.setItem('Auth', userDetails.token);
+				if ($('#remember').checked = true) {
+					localStorage.setItem('email', $emailInput.val());
+				}
 			} else {
 				console.log('Unable to use local storage');
 			}
@@ -36,17 +39,18 @@ $(document).ready(function() {
 			notie.alert(3, 'Login failed', 2.5);
 			console.log(e);
 		})
-
 	});
 
-	$('#create').click(function () {
-		createUser({
+
+	// Create Button
+	$('#create').click(function() {
+		user(UserOperation.CREATE, {
 			email: $emailInput.val(),
 			password: $passwordInput.val()
-		}).then(function (userDetails) {
+		}).then(function(userDetails) {
 			console.log('Success!');
 			notie.alert(1, 'Create Success!', 2);
-		}, function (e) {
+		}, function(e) {
 			console.log(e.errors[0].message);
 		})
 	})

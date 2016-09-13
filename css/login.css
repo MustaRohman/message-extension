@@ -1,9 +1,24 @@
 body {
-	width: 200px;
+	width: 230px;
+	height: 260px;
 	padding: 20px;
 	padding-top: 0px;
+	background-color: #263238;
 }
 
-button {
+h3 {
+	color: #E84E40;
+	font-weight: bold;
+
+}
+
+label {
+	color: #ECEFF1;
+	padding-left: 5px;
+}
+
+
+#buttons {
+	margin-top: 10px;
 	margin-bottom: 10px;
 }
