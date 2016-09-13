@@ -17,6 +17,5 @@
   },
   "homepage": "https://github.com/MustaRohman/message-extension#readme",
   "dependencies": {
-    "bootstrap": "^3.3.7"
   }
 }

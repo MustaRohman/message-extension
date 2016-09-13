@@ -1,16 +1,16 @@
 {
   "manifest_version": 2,
 
-  "name": "Message Extension",
+  "name": "SimpleChat",
   "description": "Simple chat application",
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "",
     "default_popup": "login.html"
   },
   "permissions": [
     "activeTab",
+    "https://musta-message-api.herokuapp.com/*"
     // "https://ajax.googleapis.com/"
   ]
 }
