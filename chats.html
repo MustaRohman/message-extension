@@ -1,1 +1,41 @@
-success
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home Page</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/chats.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row header">
+			<ul>
+				<li id="user">Logged in as </li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="row">
+			<div class="pull-right form">
+				<input type="text" class="form-control" id="chatNameInput" placeholder="Chat Name">
+				<input type="email" class="form-control" id="recipientInput" placeholder="user@example.com">
+				<button type="button" class="btn btn-primary" id="add">+</button>
+			</div>
+		</div>
+	</div>
+
+	<ul class="list-group">
+		<a href="#" class="list-group-item list-group-item-action">
+			<ul id="item">
+				<li>testing@test.com</li>
+				<li>Active</li>
+				<li>03/10/2016</li>
+			</ul>
+		</a>
+	</ul>
+
+	<script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/conversation.js"></script>
+	<script type="text/javascript" src="/js/chats.js"></script>
+</body>
+</html>
