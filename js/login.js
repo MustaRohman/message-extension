@@ -22,7 +22,8 @@ $(document).ready(function() {
 		}).then(function(userDetails) {
 			console.log('Success!');
 			if (typeof(Storage) !== 'undefined') {
-				sessionStorage.setItem('Auth', userDetails.token);
+				console.log('Token: ' + userDetails.token);
+				localStorage.setItem('Auth', userDetails.token);
 				if ($('#remember').checked = true) {
 					localStorage.setItem('email', $emailInput.val());
 				}

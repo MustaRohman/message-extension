@@ -31,6 +31,5 @@ function user(operation, userObject) {
 		xhr.open('POST', url, true);
 		xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 		xhr.send(JSON.stringify(userObject));
-
 	});
 }
